@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
 import axios from 'axios';
-import { secret } from '../../secrets';
+import { secret } from '../secrets';
 
 /* eslint-disable import/prefer-default-export */
 export const updateSearchTerm = createAction('UPDATE_SEARCH_TERM');

@@ -6,8 +6,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
-  jsout: path.join(__dirname),
-  htmlout: path.join(__dirname),
+  jsout: path.resolve(__dirname, 'dist'),
+  htmlout: path.resolve(__dirname, 'dist'),
 };
 
 const styleOpts = {
@@ -22,7 +22,7 @@ module.exports = {
     './src/index.js',
   ],
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -57,7 +57,7 @@ module.exports = {
     new ExtractTextPlugin('styles.css'),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
-      exclude: ['vendor.js']
+      exclude: ['vendor.js'],
     }),
     new HtmlWebpackPlugin({
       filename: `${PATHS.jsout}/index.html`,

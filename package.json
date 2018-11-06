@@ -7,8 +7,8 @@
     "start": "webpack-dev-server --config webpack.config.js --progress --inline --hot --open",
     "test": "BABEL_ENV=test mocha --compilers js:babel-core/register --require ./testSetup.js --recursive ./tests",
     "test:watch": "yarn run test -- --watch",
-    "predeploy": "yarn run build",
-    "build": "react-scripts build"
+    "build": "webpack -p",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {},
   "author": "",
@@ -25,7 +25,6 @@
     "babel-preset-react": "^6.1.18",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-2": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.17",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
     "enzyme": "^3.1.1",
@@ -43,13 +42,13 @@
     "stylelint": "^8.2.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
-    "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.5",
+    "clean-webpack-plugin": "^0.1.19",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.11.2",
     "history": "^4.7.2",
@@ -57,8 +56,8 @@
     "moxios": "^0.4.0",
     "node-sass": "^4.7.2",
     "normalizr": "^3.2.3",
-    "prop-types": "^15.5.10",
     "postcss-loader": "^2.0.8",
+    "prop-types": "^15.5.10",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-hot-loader": "^3.1.2",
@@ -71,6 +70,7 @@
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2"
+    "style-loader": "^0.18.2",
+    "webpack": "^3.8.1"
   }
 }
