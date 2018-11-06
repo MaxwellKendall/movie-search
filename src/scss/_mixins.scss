@@ -1,0 +1,33 @@
+@mixin flex-box-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bp($point) {
+  @if $point == $mobile {
+    @media screen and (min-width: $mobile) {
+      @content;
+    }
+  }
+  @if $point == $tablet {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+  @if $point == $desktop {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+  @if $point == $monitor {
+    @media screen and (min-width: $monitor) {
+      @content;
+    }
+  }
+}
+
+@mixin smoothTransition($prop, $timing) {
+    transition: $prop $timing cubic-bezier(0.645, 0.045, 0.355, 1);
+}

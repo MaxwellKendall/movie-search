@@ -1,0 +1,35 @@
+.movie-details__container {
+  @include flex-box-center(column);
+  
+  position: fixed;
+  background: rgba(0,0,0, 0.7);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  .movie-details__details {
+    @include flex-box-center(column);
+    justify-content: flex-start;
+    overflow-y: scroll;
+    position: absolute;
+    background: #fff;
+    width: 75%;
+    margin: auto;
+    height: 65%;
+    padding: 2rem;
+    @include bp($desktop) {
+      width: 50%;
+      height: 50%;
+      padding: 2rem;
+    }
+    button.movie-details__hide {
+      position: absolute;
+      right: 1px;
+      top: 0px;
+      font-size: 20px;
+    }
+  }
+}
+
+.movie-details__container .hide {
+  display: none;
+}

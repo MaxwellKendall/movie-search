@@ -1,0 +1,17 @@
+@import '_vars';
+@import '_mixins';
+@import '_selectors';
+
+@import './components/_main';
+@import './components/_gallery';
+@import './components/_search';
+@import './components/_details';
+
+body {
+  font-size: $regular-font;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}

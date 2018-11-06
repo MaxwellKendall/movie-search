@@ -1,0 +1,17 @@
+.gallery {
+  @include flex-box-center(column);
+  padding: 0;
+  @include bp($desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    @include flex-box-center(column);
+    @include bp($desktop) {
+      width: 20rem;
+    }
+    span:first-of-type {
+      font-size: $regular-font;
+    }
+  }
+}

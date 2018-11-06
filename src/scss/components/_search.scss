@@ -1,0 +1,23 @@
+.search {
+  @include flex-box-center(column);
+  padding: 2rem 0;
+  width: 100%;
+  height: 100%;
+  input,
+  button {
+   @extend %background-styles;
+   width: 12rem;
+   @include bp($desktop) {
+     width: 50%;
+     line-height: 2rem;
+   }
+  }
+  input {
+    margin-bottom: $global-spacer / 4;
+    line-height: $global-spacer - .75rem;
+    text-indent: $global-spacer / 4;
+    @include bp($desktop) {
+      line-height: 2rem;
+    }
+  }
+}
