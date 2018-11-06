@@ -18,7 +18,7 @@ export const dismissError = createAction('DISMISS_ERROR');
 export const getMovieBySearchTerm = (page = 1) => (
   (dispatch, getState) => {
     dispatch(getMovieRequest());
-    return axios.get(`http://www.omdbapi.com/?s=${getState().gallery.searchTerm}&page=${page}&r=json&apikey=${secret}`)
+    return axios.get(`https://www.omdbapi.com/?s=${getState().gallery.searchTerm}&page=${page}&r=json&apikey=${secret}`)
       .then((resp) => {
         if (resp.data.Response === 'True') {
           dispatch(dismissError());
@@ -37,7 +37,7 @@ export const getMovieBySearchTerm = (page = 1) => (
 export const getMovieDetails = (title, year) => (
   (dispatch) => {
     dispatch(getMovieDetailsRequest());
-    return axios.get(`http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${secret}`)
+    return axios.get(`https://www.omdbapi.com/?t=${title}&y=${year}&apikey=${secret}`)
       .then((resp) => {
         dispatch(dismissError());
         dispatch(getMovieDetailsSuccess(resp.data));
