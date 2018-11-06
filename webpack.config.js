@@ -40,9 +40,9 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            { loader: 'css-loader', options: { sourceMap: true }},
-            { loader: 'postcss-loader', options: { sourceMap: true }},
-            { loader: 'sass-loader', options: { sourceMap: true }},
+            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } },
           ],
         }),
       },
@@ -74,5 +74,5 @@ module.exports = {
     hot: true,
     open: true,
     publicPath: 'http://localhost:9000/',
-  }
+  },
 };
